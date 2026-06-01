@@ -2,6 +2,12 @@
 
 GameClicker maps keyboard keys to mouse clicks at fixed screen coordinates. It is built for macOS and can restrict clicks to a specific foreground app or window title.
 
+## Demo
+
+[![GameClicker demo video](https://img.youtube.com/vi/78s4hVErwP8/maxresdefault.jpg)](https://youtu.be/78s4hVErwP8)
+
+Watch the demo: https://youtu.be/78s4hVErwP8
+
 ## Requirements
 
 - macOS
