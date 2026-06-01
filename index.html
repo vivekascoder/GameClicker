@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>GameClicker</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.11.1/build/styles/github.min.css">
     <style>
       :root {
         color-scheme: light;
@@ -118,7 +119,7 @@
       pre {
         overflow-x: auto;
         margin: 12px 0 20px;
-        padding: 14px 16px;
+        padding: 0;
         border: 1px solid var(--line);
         border-radius: 8px;
         background: var(--code-bg);
@@ -126,10 +127,14 @@
 
       pre code {
         display: block;
-        padding: 0;
-        background: transparent;
+        padding: 14px 16px;
+        background: var(--code-bg);
         border-radius: 0;
         white-space: pre;
+      }
+
+      pre code.hljs {
+        background: var(--code-bg);
       }
 
       .note {
@@ -173,7 +178,7 @@
 
       <section id="run">
         <h2>Run Locally</h2>
-        <pre><code>git clone https://github.com/vivekascoder/GameClicker.git
+        <pre><code class="language-bash">git clone https://github.com/vivekascoder/GameClicker.git
 cd GameClicker
 python3 -m venv .venv
 source .venv/bin/activate
@@ -186,17 +191,17 @@ python game_clicker.py</code></pre>
       <section>
         <h2>Configure Coordinates</h2>
         <p>Print the current pointer position, then copy the values into <code>config.json</code>.</p>
-        <pre><code>python game_clicker.py --show-position</code></pre>
+        <pre><code class="language-bash">python game_clicker.py --show-position</code></pre>
         <p>Or save the current pointer position to a key binding after a delay.</p>
-        <pre><code>python game_clicker.py --calibrate w --delay 3</code></pre>
+        <pre><code class="language-bash">python game_clicker.py --calibrate w --delay 3</code></pre>
       </section>
 
       <section>
         <h2>Limit to a Window</h2>
         <p>Inspect the focused app and window title.</p>
-        <pre><code>python game_clicker.py --print-window</code></pre>
+        <pre><code class="language-bash">python game_clicker.py --print-window</code></pre>
         <p>Then edit <code>config.json</code>.</p>
-        <pre><code>{
+        <pre><code class="language-json">{
   "only_when": {
     "frontmost_app_contains": "Your Game App",
     "window_title_contains": "Your Window Title"
@@ -207,7 +212,36 @@ python game_clicker.py</code></pre>
       <section>
         <h2>Hill Climb Racing</h2>
         <p>The included example maps <code>D</code> and <code>A</code> to hold-style clicks at relative screen positions.</p>
-        <pre><code>python game_clicker.py hillclimbracing.json</code></pre>
+        <pre><code class="language-bash">python game_clicker.py hillclimbracing.json</code></pre>
+        <p>The included <code>hillclimbracing.json</code> file uses this configuration.</p>
+        <pre><code class="language-json">{
+  "only_when": {
+    "frontmost_app_contains": "Hill Climb",
+    "window_title_contains": ""
+  },
+  "bindings": {
+    "key1": {
+      "key": "d",
+      "coord": {
+        "x": 0.9,
+        "y": 0.9,
+        "relative": true
+      },
+      "button": "left",
+      "mode": "hold"
+    },
+    "key2": {
+      "key": "a",
+      "coord": {
+        "x": 0.1,
+        "y": 0.9,
+        "relative": true
+      },
+      "button": "left",
+      "mode": "hold"
+    }
+  }
+}</code></pre>
       </section>
 
       <section>
@@ -219,5 +253,7 @@ python game_clicker.py</code></pre>
         </ul>
       </section>
     </main>
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.11.1/build/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
   </body>
 </html>

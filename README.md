@@ -83,6 +83,39 @@ Run it with:
 python game_clicker.py hillclimbracing.json
 ```
 
+The config used by `hillclimbracing.json` is:
+
+```json
+{
+  "only_when": {
+    "frontmost_app_contains": "Hill Climb",
+    "window_title_contains": ""
+  },
+  "bindings": {
+    "key1": {
+      "key": "d",
+      "coord": {
+        "x": 0.9,
+        "y": 0.9,
+        "relative": true
+      },
+      "button": "left",
+      "mode": "hold"
+    },
+    "key2": {
+      "key": "a",
+      "coord": {
+        "x": 0.1,
+        "y": 0.9,
+        "relative": true
+      },
+      "button": "left",
+      "mode": "hold"
+    }
+  }
+}
+```
+
 Override the app or window filter from the command line:
 
 ```bash
