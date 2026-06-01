@@ -1,0 +1,24 @@
+{
+  "only_when": {
+    "frontmost_app_contains": "",
+    "window_title_contains": ""
+  },
+  "bindings": {
+    "w": {
+      "x": 500,
+      "y": 500,
+      "relative": false,
+      "button": "left",
+      "mode": "tap",
+      "repeat_interval": 0.1
+    },
+    "s": {
+      "x": 650,
+      "y": 500,
+      "relative": false,
+      "button": "left",
+      "mode": "tap",
+      "repeat_interval": 0.1
+    }
+  }
+}
